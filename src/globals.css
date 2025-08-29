@@ -82,6 +82,7 @@
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-feature-settings: normal;
     font-variation-settings: normal;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -90,5 +91,84 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve focus visibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Better text rendering */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  /* Improved button and interactive elements */
+  button, [role="button"] {
+    cursor: pointer;
+  }
+
+  button:disabled, [role="button"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Better link styles */
+  a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Improved form elements */
+  input, select, textarea {
+    background-color: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: hsl(var(--ring));
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  /* Better scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.4);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.6);
   }
 }
